@@ -1,6 +1,11 @@
 package Event;
 
-public class arrival  extends Event{
+import java.simulator.Event;
+import java.simulator.State;
+import java.simulator.EventQueue;
+
+
+public class arrival  extends Event{ //Has Errors
 
 	public Store store;
 	StoreState STOSTA;
