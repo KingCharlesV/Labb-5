@@ -1,5 +1,6 @@
 package Event;
 
-public class visualrepresentation {
+public class visualrepresentation { //Should the second word Representation start with a uppercase letter.
+	
 
 }
