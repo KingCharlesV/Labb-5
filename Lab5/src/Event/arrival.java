@@ -12,13 +12,13 @@ public class arrival  extends Event{ //Has Errors
 	private double leadTime;
 	
 	public Arrival(SortedSequence SSeq,SimState SS) {
-		STOSTA = (StoreState SSeq,SimState SS){
+		STOSTA = (StoreState) SS;
 		this.customer = CustomerFactory.newCostumer();
 		time = STOSTA.newEventTime();
 
 		}
 	
-	public void Execute()
+	public void Execute() {
 	
 		StoreState.currentEvent = "ARRIVE";
 		SSeq.sortEvents(new Arrive(SSeq,SS));
@@ -40,9 +40,9 @@ public class arrival  extends Event{ //Has Errors
 			STOSTA.observable(this);
 			StoreState.avaliableSlowCheckouts--;
 			
-			//Förslag på konvertering CarWashState => CheckoutSrae
+			//Förslag på konvertering CarWashState => CheckoutState
 		
-		}else if(StoreState.fastAvaliable() == false && StoreState.slowAvaliable() == false) && FIFO.customerCustomerQueue.size()<FIFO.maxSize()){
+		}else if(StoreState.fastAvaliable() == false && StoreState.slowAvaliable() == false) && FIFO.customerCustomerQueue.size()<FIFO.maxSize()){ //Error
 			customer.previousCheckout = "FIFO";
 			STOSTA.observable(this);
 			FIFO.add(new Leave(STOSTA,customer,time,checkoutTime));
